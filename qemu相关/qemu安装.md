@@ -12,4 +12,17 @@ pacman -S mingw-w64-x86_64-qemu
 $ ls /d/Program\ Files/msys64/mingw64/share/qemu/
 <img width="2825" height="437" alt="image" src="https://github.com/user-attachments/assets/515b62e3-b9e5-4901-ad40-9dffb7e061a4" />
 
-不识别？未解决
+不识别？未解决，先自己编译一个ovmf.fd 吧
+
+
+
+编译先安装nasm，然后一定要用 vs2022打开代码块执行edksetup.bat ，然后更改 Conf/target.txt
+ACTIVE_PLATFORM       = MdeModulePkg/MdeModulePkg.dsc
+TARGET                = DEBUG  # 调试模式
+TARGET_ARCH           = X64    # 64位架构
+TOOL_CHAIN_TAG        = VS2022 # 使用VS2022工具链
+
+在build，
+目前报错
+<img width="2852" height="1006" alt="image" src="https://github.com/user-attachments/assets/a60ecea3-7174-4e70-b290-42ec6fc04279" />
+
